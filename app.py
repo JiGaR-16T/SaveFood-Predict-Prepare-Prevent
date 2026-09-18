@@ -16,7 +16,7 @@ st.markdown("""
     .main { padding: 2rem; }
     .stMetric { background-color: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #e9ecef; }
     </style>
-""", unsafe_allow_allow_html=True)
+""", unsafe_allow_html=True)
 
 # Load Artifacts and Data
 @st.cache_resource
