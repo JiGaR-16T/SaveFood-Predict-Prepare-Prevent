@@ -3,14 +3,14 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# Page Configuration
+# Page Configuration - Browser Tab Icon & Title
 st.set_page_config(
-    page_title="SaveFood - Decision Intelligence",
-    page_icon="💧",
+    page_title="SaveFood - Canteen Intelligence",
+    page_icon="🥗",
     layout="wide"
 )
 
-# Custom Fluid Blue & Aquatic Aesthetic CSS
+# Custom Fluid Glassmorphism Theme CSS
 st.markdown("""
     <style>
     /* Gradient Fluid Background */
@@ -73,12 +73,12 @@ except FileNotFoundError:
     st.error("Model files not found! Please run train_model.py first.")
     st.stop()
 
-# Main Fluid Header
+# Main Header with Food Branding
 st.markdown("""
     <div class="hero-card">
-        <h1 style="color: #e0f2fe; margin: 0; font-size: 2.6rem; font-weight: 700;">🌊 SaveFood: Demand Intelligence</h1>
+        <h1 style="color: #e0f2fe; margin: 0; font-size: 2.6rem; font-weight: 700;">🥗 SaveFood: Demand Intelligence</h1>
         <p style="font-size: 1.15rem; color: #bae6fd; margin-top: 10px; letter-spacing: 0.5px;">
-            💧 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
+            🍲 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
         </p>
     </div>
 """, unsafe_allow_html=True)
