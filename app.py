@@ -10,11 +10,46 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom Styling
+# Custom Natural / Food-Centric Theme CSS
 st.markdown("""
     <style>
-    .main { padding: 2rem; }
-    .stMetric { background-color: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #e9ecef; }
+    /* Global background styling with a subtle fresh overlay */
+    .stApp {
+        background-color: #F4F7F4;
+    }
+    
+    /* Hero Banner Styling */
+    .hero-card {
+        background: linear-gradient(135deg, #1e4620 0%, #2e7d32 100%);
+        padding: 30px;
+        border-radius: 16px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px;
+    }
+    
+    /* Input Container Styling */
+    div[data-testid="stForm"], .css-1r6slb0, .stColumn > div {
+        background-color: #FFFFFF;
+        border-radius: 12px;
+    }
+    
+    /* Metric Cards Styling */
+    .stMetric {
+        background-color: #E8F5E9 !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
+        border: 1px solid #C8E6C9 !important;
+    }
+    
+    /* Button Styling */
+    .stButton>button {
+        background-color: #2E7D32 !important;
+        color: white !important;
+        border-radius: 8px !important;
+        font-weight: bold !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -32,16 +67,15 @@ except FileNotFoundError:
     st.error("Model files not found! Please run train_model.py first.")
     st.stop()
 
-# Visual Banner Section
+# Main Visual Header
 st.markdown("""
-    <div style="background-color: #1E3A8A; padding: 25px; border-radius: 15px; color: white; text-align: center; margin-bottom: 25px;">
-        <h1 style="color: #FACC15; margin: 0; font-size: 2.5rem;">🥗 SaveFood: Demand Intelligence System</h1>
-        <p style="font-size: 1.2rem; color: #E0E7FF; margin-top: 10px;">
-            🍲 <b>Predict Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Prevent Campus Wastage</b>
+    <div class="hero-card">
+        <h1 style="color: #A5D6A7; margin: 0; font-size: 2.5rem;">🥗 SaveFood: Demand Intelligence</h1>
+        <p style="font-size: 1.15rem; color: #E8F5E9; margin-top: 10px;">
+            🌾 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 🍲 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
         </p>
     </div>
 """, unsafe_allow_html=True)
-st.divider()
 
 col1, col2 = st.columns([1, 1.2])
 
@@ -94,7 +128,7 @@ with col2:
 st.divider()
 
 # Graphical Analytics Section
-st.subheader("📊 Historical Performance Analytics")
+st.subheader("📊 Historical Sustainability Logs")
 
 chart_tab1, chart_tab2 = st.tabs(["📈 Attendance vs Portions Sold", "🌱 Food Waste History"])
 
