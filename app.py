@@ -6,49 +6,55 @@ import joblib
 # Page Configuration
 st.set_page_config(
     page_title="SaveFood - Decision Intelligence",
-    page_icon="🥗",
+    page_icon="💧",
     layout="wide"
 )
 
-# Custom Natural / Food-Centric Theme CSS
+# Custom Fluid Blue & Aquatic Aesthetic CSS
 st.markdown("""
     <style>
-    /* Global background styling with a subtle fresh overlay */
+    /* Gradient Fluid Background */
     .stApp {
-        background-color: #F4F7F4;
+        background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #bae6fd 100%);
+        background-attachment: fixed;
     }
     
-    /* Hero Banner Styling */
+    /* Fluid Glassmorphism Hero Banner */
     .hero-card {
-        background: linear-gradient(135deg, #1e4620 0%, #2e7d32 100%);
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);
         padding: 30px;
-        border-radius: 16px;
+        border-radius: 20px;
         color: white;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
         margin-bottom: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
     
-    /* Input Container Styling */
-    div[data-testid="stForm"], .css-1r6slb0, .stColumn > div {
-        background-color: #FFFFFF;
-        border-radius: 12px;
-    }
-    
-    /* Metric Cards Styling */
+    /* Translucent Metric Cards */
     .stMetric {
-        background-color: #E8F5E9 !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(10px);
         padding: 15px !important;
-        border-radius: 12px !important;
-        border: 1px solid #C8E6C9 !important;
+        border-radius: 15px !important;
+        border: 1px solid #7dd3fc !important;
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08);
     }
     
-    /* Button Styling */
+    /* Fluid Blue Primary Button */
     .stButton>button {
-        background-color: #2E7D32 !important;
+        background: linear-gradient(90deg, #0284c7 0%, #0284c7 100%) !important;
         color: white !important;
-        border-radius: 8px !important;
+        border-radius: 10px !important;
         font-weight: bold !important;
+        border: none !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    
+    .stButton>button:hover {
+        background: linear-gradient(90deg, #0369a1 0%, #075985 100%) !important;
+        transform: translateY(-2px);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -67,12 +73,12 @@ except FileNotFoundError:
     st.error("Model files not found! Please run train_model.py first.")
     st.stop()
 
-# Main Visual Header
+# Main Fluid Header
 st.markdown("""
     <div class="hero-card">
-        <h1 style="color: #A5D6A7; margin: 0; font-size: 2.5rem;">🥗 SaveFood: Demand Intelligence</h1>
-        <p style="font-size: 1.15rem; color: #E8F5E9; margin-top: 10px;">
-            🌾 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 🍲 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
+        <h1 style="color: #e0f2fe; margin: 0; font-size: 2.6rem; font-weight: 700;">🌊 SaveFood: Demand Intelligence</h1>
+        <p style="font-size: 1.15rem; color: #bae6fd; margin-top: 10px; letter-spacing: 0.5px;">
+            💧 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
         </p>
     </div>
 """, unsafe_allow_html=True)
