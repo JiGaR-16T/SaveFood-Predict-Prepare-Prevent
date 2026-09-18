@@ -32,10 +32,15 @@ except FileNotFoundError:
     st.error("Model files not found! Please run train_model.py first.")
     st.stop()
 
-# Header Section
-st.title("🥗 SaveFood: Demand Intelligence System")
-st.caption("Predict daily consumption, optimize preparation, and prevent campus food waste.")
-
+# Visual Banner Section
+st.markdown("""
+    <div style="background-color: #1E3A8A; padding: 25px; border-radius: 15px; color: white; text-align: center; margin-bottom: 25px;">
+        <h1 style="color: #FACC15; margin: 0; font-size: 2.5rem;">🥗 SaveFood: Demand Intelligence System</h1>
+        <p style="font-size: 1.2rem; color: #E0E7FF; margin-top: 10px;">
+            🍲 <b>Predict Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Prevent Campus Wastage</b>
+        </p>
+    </div>
+""", unsafe_allow_html=True)
 st.divider()
 
 col1, col2 = st.columns([1, 1.2])
