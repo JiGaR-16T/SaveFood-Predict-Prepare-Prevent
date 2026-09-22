@@ -7,11 +7,86 @@ st.set_page_config(page_title="SaveFood - Canteen Intelligence", page_icon="🥗
 
 st.markdown("""
     <style>
-    .stApp { background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #bae6fd 100%); background-attachment: fixed; }
-    .hero-card { background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%); padding: 30px; border-radius: 20px; color: white; text-align: center; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2); margin-bottom: 25px; border: 1px solid rgba(255, 255, 255, 0.3); }
-    .stMetric { background: rgba(255, 255, 255, 0.75) !important; backdrop-filter: blur(10px); padding: 15px !important; border-radius: 15px !important; border: 1px solid #7dd3fc !important; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08); }
-    .stButton>button { background: linear-gradient(90deg, #0284c7 0%, #0284c7 100%) !important; color: white !important; border-radius: 10px !important; font-weight: bold !important; border: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); }
-    .stButton>button:hover { background: linear-gradient(90deg, #0369a1 0%, #075985 100%) !important; transform: translateY(-2px); }
+    /* Premium Dark Background */
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c1420 100%);
+        background-attachment: fixed;
+    }
+
+    /* Force readable text everywhere by default */
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #e2e8f0 !important;
+    }
+
+    /* Hero Banner */
+    .hero-card {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #075985 100%);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(14, 165, 233, 0.25);
+        margin-bottom: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .hero-card h1, .hero-card p, .hero-card b { color: #f0f9ff !important; }
+
+    /* Section headers (Input Params, Decision Analytics, etc.) */
+    .stApp h2, .stApp h3 {
+        color: #38bdf8 !important;
+        font-weight: 700 !important;
+    }
+
+    /* Glass panels for inputs/metrics */
+    .stMetric, div[data-testid="stVerticalBlock"] > div:has(> div.stNumberInput) {
+        background: rgba(30, 41, 59, 0.7) !important;
+        backdrop-filter: blur(12px);
+        padding: 15px !important;
+        border-radius: 15px !important;
+        border: 1px solid rgba(56, 189, 248, 0.25) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    .stMetric label, .stMetric div { color: #e2e8f0 !important; }
+
+    /* Inputs, selects, number fields */
+    .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Buttons */
+    .stButton>button {
+        background: linear-gradient(90deg, #0ea5e9 0%, #0284c7 100%) !important;
+        color: white !important;
+        border-radius: 10px !important;
+        font-weight: bold !important;
+        border: none !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+    }
+    .stButton>button:hover {
+        background: linear-gradient(90deg, #0369a1 0%, #075985 100%) !important;
+        transform: translateY(-2px);
+    }
+
+    /* Success / Warning / Error / Info boxes */
+    div[data-testid="stAlert"] {
+        background: rgba(30, 41, 59, 0.8) !important;
+        border-radius: 12px !important;
+        border-left: 4px solid #38bdf8 !important;
+        backdrop-filter: blur(10px);
+    }
+    div[data-testid="stAlert"] p, div[data-testid="stAlert"] b {
+        color: #f0f9ff !important;
+    }
+
+    /* Tabs */
+    .stTabs [data-baseweb="tab"] { color: #94a3b8 !important; }
+    .stTabs [aria-selected="true"] { color: #38bdf8 !important; font-weight: 700 !important; }
+
+    /* Divider */
+    hr { border-color: #334155 !important; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -30,8 +105,8 @@ except FileNotFoundError:
 
 st.markdown("""
     <div class="hero-card">
-        <h1 style="color: #e0f2fe; margin: 0; font-size: 2.6rem; font-weight: 700;">🥗 SaveFood: Demand Intelligence</h1>
-        <p style="font-size: 1.15rem; color: #bae6fd; margin-top: 10px; letter-spacing: 0.5px;">
+        <h1 style="color: #f0f9ff; margin: 0; font-size: 2.6rem; font-weight: 700;">🥗 SaveFood: Demand Intelligence</h1>
+        <p style="font-size: 1.15rem; color: #f0f9ff; margin-top: 10px; letter-spacing: 0.5px;">
             🍲 <b>Predict Daily Consumption</b> &nbsp;|&nbsp; 📦 <b>Optimize Preparation</b> &nbsp;|&nbsp; 🌱 <b>Zero Waste Canteen</b>
         </p>
     </div>
