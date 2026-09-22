@@ -191,8 +191,12 @@ if 'predicted_demand' in st.session_state:
 
     getattr(st, level)(f"**Recommended Action:** {action}")
     st.write(f"📝 {reason}")
+
     c1, c2 = st.columns(2)
-    c1.metric("Surplus / Shortfall", f"{surplus} meals")
+    if surplus >= 0:
+        c1.metric("Surplus", f"{surplus} meals", delta="Over-prepared")
+    else:
+        c1.metric("Shortfall", f"{abs(surplus)} meals", delta="Under-prepared", delta_color="inverse")
     c2.metric("Potential Savings if Followed", f"₹{savings}")
 else:
     st.info("Calculate demand first to unlock recommendations.")
